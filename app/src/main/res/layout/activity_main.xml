@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity">
+
+    <Space android:id="@+id/s_dummy"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true"
+        android:visibility="visible"/>
+
+    <RelativeLayout
+        android:id="@+id/layout_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:id="@+id/image_quicktax_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/quicktax_590"
+            android:scaleType="fitXY"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_gross_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_top"
+        android:layout_above="@id/s_dummy"
+        android:layout_alignLeft="@id/layout_top" >
+
+        <EditText
+            android:id="@+id/edit_gross_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textCursorDrawable="@null"
+            android:background="#ffffff"
+            android:clickable="false"
+            android:ems="11"
+            android:enabled="true"
+            android:focusable="true"
+            android:hint="Gross Amount"
+            android:inputType="numberDecimal"
+            android:textColor="#000000"
+            android:textColorHint="#8c8c8c"
+            android:textSize="20sp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+        <ImageButton
+            android:id="@+id/image_qr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/edit_gross_amount"
+            android:layout_toRightOf="@id/edit_gross_amount"
+            android:layout_marginLeft="15sp"
+            android:src="@drawable/qr_code60"
+            android:scaleType="fitXY"
+            android:background="@null"
+            android:onClick="futureImprovementMessage"
+            />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/layout_gross_amount"
+        android:layout_alignBottom="@id/layout_gross_amount">
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/text_rights"
+            style="@style/CommonFont.Footer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All rights reserved to Sovos Compliance."
+            />
+        <TextView
+            style="@style/CommonFont.Footer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_rights"
+            android:text="Tucuman 2017"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_calculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/layout_gross_amount"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <ImageButton
+            android:src="@drawable/button_custom"
+            android:id="@+id/btn_execute_calculation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:onClick="executeProcess"
+            android:background="@null"/>
+    </RelativeLayout>
+
+</RelativeLayout>
